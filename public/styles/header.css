@@ -5,7 +5,8 @@
   flex-direction: column;
   background-color:rgb(243, 200, 145);
   padding-top: 120px;
-  background-image: url('/public/images/3px-tile.png');
+  /* to be fixed later */
+  /* background-image: url('/public/images/3px-tile.png'); */
  
 }
 
