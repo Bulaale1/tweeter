@@ -1,0 +1,14 @@
+{
+  "eslint.options": {
+      "env":{
+       "es6": true,
+    },
+    "parserOptions": {
+       "ecmaVersion": 7
+   }
+
+    },
+    "jshint.options": {
+      "esversion": 6
+    }
+}
