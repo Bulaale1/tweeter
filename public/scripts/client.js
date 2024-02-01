@@ -56,4 +56,24 @@ $(document).ready(() => {
       $tweetContainer.prepend($eachTweet );
     }
   };
+
+ const $formId = $('#form');
+//  const $newFoodItemForm = $('#new-food-item');
+  $formId.on('submit', (event) => {
+    // prevent the default behaviour of the browser
+    event.preventDefault();
+    
+    // grab the data from the form
+    const data = $formId.serialize();
+
+    // // POST the data to the server
+    $.ajax({
+      url: '/tweets',
+      method: 'POST',
+      data: data,
+      success: () => {
+        console.log('post request resolved successfully');
+      }
+    }); 
+  });
 });
