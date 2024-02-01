@@ -39,6 +39,15 @@ $(document).ready(() => {
   $formId.on('submit', (event) => {
     // prevent the default behaviour of the browser
     event.preventDefault();
+    // disallow form submission if the tweet is  empty, or exceeds the 140 character limit.
+    let tweetLength = $('#tweet-text').val().length;
+    if (tweetLength > 140) {
+      alert('You exeeded the allowed limit');
+      return;
+    } else if (tweetLength <= 0) {
+      alert('Cannot tweet empty post');
+      return;
+    }
     
     // grab the data from the form
     const data = $formId.serialize();
