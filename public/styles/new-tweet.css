@@ -3,10 +3,13 @@
 }
 main section form div button{
   display: flex;
-  align-items: end;
+  align-items: center;
   background-color: #4056A1;
   font-family: "Bungee";
+  margin-left: 51px;
+  margin-bottom: auto;
 }
+
 .counter {
   padding-top: 0%;
   display: flex;
@@ -14,7 +17,6 @@ main section form div button{
   float: right;
   margin-top: -10px; 
 }
-/* animating the double down arrays at top right of tweeter page */
 @keyframes moveArrow {
   0% {
     transform: translateY(0); 

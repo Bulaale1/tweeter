@@ -1,57 +1,71 @@
 
 $(document).ready(() => {
- 
   const createTweetElement = function(tweetData) {
+    const escape = function (str) {
+      let div = document.createElement("div");
+      div.appendChild(document.createTextNode(str));
+      return div.innerHTML;
+    };
   
+ //Create tweet Elements dynamically
     const $tweetElements = `
-          <header>
-            <h2>Name: ${tweetData.user.name} </h2>
-            <h2>avatar: ${tweetData.user.avatars} </h2>
-            <h2>username: ${tweetData.user.handle} </h2>
+          <div>
+          <header class="userInfo">
+          <div >
+          <img src="${tweetData.user.avatars}" alt="User Avatar">
+          <h2>${tweetData.user.name} </h2>
+          </div>
+          <h2> ${tweetData.user.handle} </h2>
           </header>
-          <h2>content: ${tweetData.content.text}</h2>
-          <h3>time : ${tweetData.created_at}</h3>
+          <h2>${escape(tweetData.content.text)}</h2>
+          <h3>${timeago.format(tweetData.created_at)}</h3>
+          </div>
+
       `;
     return $tweetElements;
   };
   //declare tweetContainer 
   const $tweetContainer = $('#tweets-container');
 
-  //timeago
-  let timeElement = Date.now();
-  let time = timeago.format(timeElement);
-  let $tim = $('#timeago').text(time);
 // loops through param(tweets)
 // calls createTweetElement for each tweet
-// takes return value and appends it to the tweets container
+// take the return value and append it to the tweets container
 
   const renderTweets = function ($tweets) {
+    $tweetContainer.empty();
+  
     for (const $tweet of $tweets) {
 
       const $eachTweet = createTweetElement($tweet);
 
       $tweetContainer.prepend($eachTweet );
+
     }
   };
 
- const $formId = $('#form');
-//  const $newFoodItemForm = $('#new-food-item');
+const $formId = $('#form');
   $formId.on('submit', (event) => {
     // prevent the default behaviour of the browser
     event.preventDefault();
-    // disallow form submission if the tweet is  empty, or exceeds the 140 character limit.
-    let tweetLength = $('#tweet-text').val().length;
-    if (tweetLength > 140) {
-      alert('You exeeded the allowed limit');
-      return;
-    } else if (tweetLength <= 0) {
-      alert('Cannot tweet empty post');
-      return;
-    }
-    
+    //Display an error message  if the tweet is  empty, or exceeds the 140 character limit.
+    //Slideup(hide) error message 
+    $('#empty-error').slideUp();
+    $('#length-error').slideUp();
+
+  let tweetLength = $('#tweet-text').val().length;
+
+  // show an error message if the post exceeds the character limit ;
+  if (tweetLength > 140) {
+    $('#length-error').slideDown();
+    return;
+  } else if (tweetLength <= 0) {
+    // show an error message if the post is empty;
+    $('#empty-error').slideDown();
+    return;
+  }
     // grab the data from the form
     const data = $formId.serialize();
-
+  
     // // POST the data to the server
     $.ajax({
       url: '/tweets',
@@ -59,8 +73,11 @@ $(document).ready(() => {
       data: data,
       success: () => {
         console.log('post request resolved successfully');
+        loadTweets();
+
       }
-    }); 
+    });
+
   });
   const loadTweets = () => {
     // GET the data from the server
@@ -74,4 +91,5 @@ $(document).ready(() => {
   };
 
   loadTweets();
+ 
 });

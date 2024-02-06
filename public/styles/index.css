@@ -1,0 +1,76 @@
+/* @media screen and (min-width: 768px) {
+  nav {
+    padding: 15px;
+  }
+
+  .tweeter {
+    font-size: 28px;
+  }
+
+  .tweetText {
+    font-size: 18px;
+  }
+
+  .Arrow-icon {
+    font-size: 36px;
+  }
+
+  header {
+    padding: 15px;
+  }
+
+  h2 {
+    font-size: 24px;
+  }
+
+  main {
+    max-width: 960px;
+  }
+
+  textarea {
+    height: 150px;
+  }
+
+  button {
+    padding: 12px 18px;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  nav {
+    padding: 20px;
+  }
+
+  .tweeter {
+    font-size: 32px;
+  }
+
+  .tweetText {
+    font-size: 20px;
+  }
+
+  .Arrow-icon {
+    font-size: 48px;
+  }
+
+  header {
+    padding: 20px;
+  }
+
+  h2 {
+    font-size: 28px;
+  }
+
+  main {
+    max-width: 1024px;
+    margin: 0 auto;
+  }
+
+  textarea {
+    height: 180px;
+  }
+
+  button {
+    padding: 15px 20px;
+  }
+} */

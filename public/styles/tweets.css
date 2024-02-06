@@ -1,26 +1,24 @@
-/* .tweet{
+.tweet{
   border-top: 2px solid rgb(52, 50, 50);
   border-bottom: 2px solid rgb(52, 50, 50);
   border-right: 2px solid rgb(52, 50, 50);
   border-left: 2px solid rgb(52, 50, 50);
 
-} */
+}
 .footer{
   position: relative;
   background-color:rgb(239, 197, 146);
   width: 90%; 
   margin: 0 auto;
-  margin-bottom: 0%;
-  margin-top:0;
+ 
 }
-
 main article header div p img {
   width: 50px;
   height: 50px;
   border-radius: 50%;
   object-fit: cover;
 }
-#tweet-container{
+#tweets-container{
   position: relative;
   background-color:rgb(239, 197, 146);
   width: 90%; 
@@ -29,12 +27,32 @@ main article header div p img {
   border-left: 5px solid gray;
   border-right: 5px solid gray;
   border-bottom: 5px solid gray;
-  margin-bottom: 0%;
+  /* margin-bottom: 0%; */
 }
-.userInfo{
+
+.userInfo {
   display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
+  justify-content:space-between;
+  align-items: center;
+  width: 97%;
+}
+
+.userInfo img {
+  max-width: 50px;
+  margin-right: 10px;
+}
+
+.userInfo h2 {
+  margin: 0;
+}
+
+.userInfo p{
+  margin-left: auto;
+}
+
+.userInfo div {
+  display: flex;
+  align-items: center;
 }
 .avatarAndName {
   display: flex;
@@ -44,14 +62,14 @@ main article header div p img {
   border-radius: 50%; 
   margin-right: 10px
 }
- .Timestamp{
+.icons{
+  position: relative;
   display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
+  justify-content:flex-end;
+  align-items: flex-end;
+  border:25px;
 }
-article header div img{
-  float: left;
-}
-.icons i:hover {
+ .icons i:hover {
   color: red; /* Change this to your desired hover color */
-} 
+ } 
+ 
