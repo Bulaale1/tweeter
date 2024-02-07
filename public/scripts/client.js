@@ -9,7 +9,7 @@ $(document).ready(() => {
   
  //Create tweet Elements dynamically
     const $tweetElements = `
-          <div>
+          <div class="eachcontainer">
           <header class="userInfo">
           <div >
           <img src="${tweetData.user.avatars}" alt="User Avatar">
@@ -18,7 +18,14 @@ $(document).ready(() => {
           <h2> ${tweetData.user.handle} </h2>
           </header>
           <h2>${escape(tweetData.content.text)}</h2>
+          <footer class="footer">
           <h3>${timeago.format(tweetData.created_at)}</h3>
+          <div class="icons">
+          <i class="fa-regular fa-flag"></i> <!-- Flag icon from Font Awesome -->
+          <i class="fas fa-heart"></i> <!-- Heart icon from Font Awesome -->
+          <i class="fa-solid fa-retweet"></i> <!-- Share icon from Font Awesome -->
+        </div>
+        </footer>
           </div>
 
       `;
@@ -32,7 +39,7 @@ $(document).ready(() => {
 // take the return value and append it to the tweets container
 
   const renderTweets = function ($tweets) {
-    $tweetContainer.empty();
+    
   
     for (const $tweet of $tweets) {
 
@@ -73,12 +80,19 @@ const $formId = $('#form');
       data: data,
       success: () => {
         console.log('post request resolved successfully');
-        loadTweets();
+        //clear the textarea after  posting successfully
 
+        $('#tweet-text').val('');
+
+       //reset the char counter back to 140 
+        $('.counter').val('140');
+
+        loadTweets();
+       
       }
     });
-
   });
+
   const loadTweets = () => {
     // GET the data from the server
     $.ajax({

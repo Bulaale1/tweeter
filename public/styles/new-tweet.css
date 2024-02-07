@@ -1,6 +1,9 @@
 #container{
   background-color: rgb(239, 197, 146);
+  transition:  box-shadow 0.3s ease;
+  /* box-shadow: 0 0 5px rgba(6, 184, 33, 0.781); */
 }
+
 main section form div button{
   display: flex;
   align-items: center;
@@ -14,7 +17,7 @@ main section form div button{
   padding-top: 0%;
   display: flex;
   justify-content: flex-end;
-  float: right;
+  align-items:flex-start;
   margin-top: -10px; 
 }
 @keyframes moveArrow {
