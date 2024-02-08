@@ -5,8 +5,7 @@ Tweeter is a simple, single-page Twitter clone.
 This Twitter clone was built using front-end technologies( HTML, CSS, JS, jQuery and AJAX)and back-end technologies( Node, Express).
 
 ## Final Product
-!["tweeterNav-png"](https://github.com/Bulaale1/tweeter/blob/master/docs/TweeterNav-png.png?raw=true)
-!["post-tweet-png"](https://github.com/Bulaale1/tweeter/blob/master/docs/Post-tweet-png.png?raw=true)
+!["pageheader"](https://github.com/Bulaale1/tweeter/blob/master/docs/Page-header-png.png?raw=true)
 !["user-post-page"](https://github.com/Bulaale1/tweeter/blob/master/docs/User-post-png.png?raw=true)
 
 ## Dependencies
