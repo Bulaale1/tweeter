@@ -4,6 +4,7 @@
 <head>
   <!-- Meta Information -->
   <title>Tweeter - Home Page</title>
+
   <!-- External CSS -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css"
     type="text/css" />
@@ -21,6 +22,7 @@
   <link rel="stylesheet" href="/styles/tweets.css" type="text/css" />
   <link rel="stylesheet" href="/styles/error.css" type="text/css" />
   <link rel="stylesheet" href="/styles/index.css" type="text/css" />
+
 
   <!-- External JS -->
 
@@ -44,36 +46,40 @@
     </div>
     <div>
       <p class="tweetText">Write a new tweet </p>
-      <p class="Arrow-icon"> <i class="fas fa-angle-double-down" style="font-size:48px;color:red"></i></p>
+      <p class="Arrow-icon"> <i class="fas fa-angle-double-down" style="font-size:25px;color:red"></i></p>
     </div>
   </nav>
-  <header class="header">
-    <div class="nameAndavatar">
-      <img src="/images/profile-hex.png">
-      <h2>Amy Mansell</h2>
-    </div>
-  </header>
 
   <!-- Page-specific (main) content here -->
   <main id="container">
     <section class="new-tweet">
-      <div class="error-container">
-        <div id="empty-error" class="error"> ⚠️Your tweet cannot be empty.</div>
-        <div id="length-error" class="error"> ⚠️Your tweet exceeds the character limit.</div>
-      </div>
-      <form id="form" action="/tweets/" method="POST">
-        <label for="tweet-text">What are you humming about?</label>
-        <textarea name="text" id="tweet-text"></textarea>
-        <div>
 
-          <button type="submit">Tweet</button>
-
-          <output name="counter" class="counter" for="tweet-text">140</output>
+      <section class="main-container">
+        <header class="header">
+          <div class="nameAndavatar">
+            <img src="/images/profile-hex.png">
+            <h2>Amy Mansell</h2>
+          </div>
+        </header>
+        <div class="formpost">
+          <div class="error-container">
+            <div id="empty-error" class="error"> ⚠️Your tweet cannot be empty.</div>
+            <div id="length-error" class="error"> ⚠️Your tweet exceeds the character limit.</div>
+          </div>
+          <form id="form" action="/tweets/" method="POST">
+            <label for="tweet-text">What are you humming about?</label>
+            <textarea name="text" id="tweet-text"></textarea>
+            <div class="buttonAndCounter">
+              <button type="submit">Tweet</button>
+              <output name="counter" class="counter" for="tweet-text">140</output>
+            </div>
+          </form>
+          <article id="tweets-container">
+          </article>
         </div>
-      </form>
+      </section>
     </section>
-    <article id="tweets-container">
-    </article>
+
   </main>
   <script src="scripts/composer-char-counter.js"></script>
 </body>

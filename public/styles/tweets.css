@@ -1,26 +1,27 @@
 
-main article header div p img {
-  width: 50px;
-  height: 50px;
-  border-radius: 50%;
-  object-fit: cover;
-}
 #tweets-container{
   position: relative;
-  background-color:rgb(239, 197, 146);
-  width: 90%; 
-  margin: 0 auto;
-  border: 5px solid gray;
-  padding-bottom: 25px;
- 
+  background-color:#e5dede;
 }
 .footer{
   display: flex;
   justify-content:space-between;
   align-items: center;
-  border-top: 5px solid  gray;
+  border-top: 2px solid gray;
   margin-left: 25px;
   margin-right: 25px;
+  
+}
+.buttonAndCounter{
+  display: flex;
+  justify-content: space-between;
+  align-items:center;
+}
+.counter{
+  display: flex;
+  justify-content: flex-end;
+  margin-right: 10px;
+  margin-top:0px;
 }
 .userInfo {
   display: flex;
@@ -55,21 +56,25 @@ main article header div p img {
   border: 2px solid #333333;
   padding-top: 10px;
   margin-top: 15px;
-  margin-left: 25px;
-  margin-right: 25px;
-
 }
  .eachcontainer:hover {
-  box-shadow: rgba(52, 52, 121, 0.25) 0px 30px 60px -12px inset;
+  box-shadow: rgba(90, 126, 99, 0.25) 0px 30px 60px -12px inset;
 } 
-.icons{
-  position: relative;
-  display: flex;
-  justify-content:flex-end;
-  align-items: flex-end;
-  border:25px;
-}
  .icons i:hover {
-  color: red; /* Change the color of flags,share and heart icons when someone hovers on it */
+  color: red; 
  } 
- 
+ .main-container{
+  display: flex;
+  align-items: flex-start;
+
+ }
+ .formpost{
+  flex:1;
+
+ }
+ @media only screen and (max-width: 800px){
+  .main-container{
+    flex-direction: column; 
+
+  }
+}
