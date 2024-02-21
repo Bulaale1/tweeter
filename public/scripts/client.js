@@ -39,8 +39,8 @@ $(document).ready(() => {
 // take the return value and append it to the tweets container
 
   const renderTweets = function ($tweets) {
-    
-    $tweetContainer.empty();
+
+    $('#tweets-container').empty();
     
   
     for (const $tweet of $tweets) {
