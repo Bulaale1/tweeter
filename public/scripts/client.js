@@ -40,6 +40,8 @@ $(document).ready(() => {
 
   const renderTweets = function ($tweets) {
     
+    $tweetContainer.empty();
+    
   
     for (const $tweet of $tweets) {
 
